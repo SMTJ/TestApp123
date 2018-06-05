@@ -1,0 +1,109 @@
+<template>
+  <!-- template里只能有一个根节点 -->
+
+  <list class="home-list">
+    <list-item type = "bookhead" class = "content-head">
+      <!-- <div class="home-page">
+        <div class="test-item">
+          <img src="/Common/logo.png">
+          <text class="title">{{text}}</text>
+        </div>
+      </div> -->
+
+
+    <swiper class="banner" autoplay="true" interval="4000">
+        <stack class="banner-content" for="{{bannerlist}}">
+            <image class="banner-image" src="/Common/demo_large.png" onclick="bookListItemClicked"></image>
+            <text class="banner-title">{{$item}}</text>
+        </stack>
+    </swiper>
+
+
+    </list-item>
+    <block for = "homeBookLists">
+      <list-item type = "book" class = "content-item" onclick="bookListItemClicked">
+        <div class="item-content">
+          <!-- <img src="/Common/logo.png"> -->
+          <image class="bookimg" src="/Common/logo.png"></image>
+          <image class="bookimg" src="/Common/logo.png"></image>
+          <image class="bookimg" src="/Common/logo.png"></image>
+          <div class="booktext">
+            <text class = "book-title">{{$item}}</text>
+            <text class = "book-desc">{{$item}}</text>
+          </div>
+        </div>
+      </list-item>
+    </block>
+  </list>
+
+</template>
+
+<style>
+
+.content-head {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.home-list{
+  flex-direction: column;
+}
+
+.item-content{
+  flex-direction: row;
+}
+.booktext{
+  flex-direction: column;
+  margin-left: 20px;
+}
+.book-title{
+  font-size: 30px;
+}
+
+.book-desc{
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.banner{
+  width: 100%;
+  height: 200px;
+}
+
+.banner-image{
+  width: 100%;
+  height: 100%;
+}
+
+.bookimg{
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+}
+
+
+</style>
+
+
+
+<script>
+  import router from '@system.router'
+
+  export default {
+
+    private: {
+      text: '欢迎打开书城页',
+      homeBookLists:['天才小毒妃1','天才小毒妃2','天才小毒妃3','天才小毒妃4','天才小毒妃5','天才小毒妃6','天才小毒妃7'],
+      bannerlist:['推荐位1','推荐位2','推荐位3','推荐位4']
+    },
+
+    bookListItemClicked(){
+      router.push ({
+        uri: '/Demo'
+      })
+    }
+
+  }
+</script>

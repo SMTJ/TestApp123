@@ -1,0 +1,122 @@
+<template>
+  <!-- template里只能有一个根节点 -->
+  <div class="demo-page">
+    <text class="title">欢迎打开{{title}}</text>
+    <!-- <input type="text" value={{title}}/> -->
+    <!-- 点击跳转详情页 -->
+
+    <div class="btn-items">
+        <input class="btn" type="button" value="跳转到书城页" onclick="routeHomeStore" />
+        <input class="btn" type="button" value="跳转到详情页" onclick="routeDetail" />
+        <input class="btn" type="button" value="跳转到详情页" onclick="routeDetail" />
+    </div>
+
+    <div class="img-items">
+      <!-- <input class="btn" type="button" value="跳转到详情页" onclick="routeDetail" /> -->
+      <div class="logoimg">
+        <img src="/Common/logo.png">
+      </div>
+      <div class="logoimg">
+        <img src="/Common/logo.png">
+      </div>
+      <div class="logoimg">
+        <img src="/Common/logo.png">
+      </div>
+    </div>
+
+    <!-- <list="lists"></list> -->
+  </div>
+</template>
+
+<style>
+  .demo-page {
+    flex-direction: column;
+    /* justify-content: center; */
+    margin-top: 20px;
+    /* align-items: center; */
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom:  100px;
+
+  }
+
+  .title {
+    font-size: 30px;
+    /* text-align: left; */
+    text-align:justify;
+    margin-left: 0px;
+    margin-right: 50px;
+    word-wrap : break-word;
+    /* max-height: 1000px; */
+    /* justify-content: space-between; */
+    flex-direction: column;
+
+    /* text-indent: 50px; */
+    line-height: 50px;
+
+    /* word-break:keep-all;
+    /* overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    /* ext-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) */
+  }
+
+  .btn-items,.img-items{
+    margin-top: 50px;
+    flex-direction: row;
+    /* left: 10px;
+    right: 10px; */
+    /* justify-content: space-between; */
+    justify-content: space-around;
+  }
+  .img-items{
+    margin-bottom: 50px;
+  }
+  .text{
+    width: 90%;
+  }
+  .btn {
+    margin-left: 10px;
+    width: 30%;
+    height: 40px;
+    border-radius: 43px;
+    background-color: #09ba07;
+    font-size: 15px;
+    color: #ffffff;
+  }
+  .logoimg{
+    width: 30%;
+    margin-left: 10px;
+    justify-content:center;
+    background-color: #09ba07;
+  }
+
+  .img{
+    width: 100%;
+    height: 100%;
+    /* margin-left: 100px; */
+  }
+</style>
+
+<script>
+  import router from '@system.router'
+
+  export default {
+    // 页面级组件的数据模型，影响传入数据的覆盖机制：private内定义的属性不允许被覆盖
+    private: {
+      // title: '示例页面示例页面示例页面示例页面示例页面示例页面示例页面例页面示例页面'
+
+      title:'\n　　随后看了一眼李静冉的脸色说道：“面色发赤，嘴唇发白又干。”\n　　随后又抓起她的手掌看了看，眉头狠狠的皱了皱，继续说道：“手掌上有肝纹，小冉，你这几天右腹部是不是隐隐作痛啊，而且吃饭一吃就饱！”\n　　李静冉听了林凯的话，顿时愣住了。\n　　这些症状十天才出现，本来以为工作累导致的，自己也没有在意，而且也没有告诉任何人啊？林凯是怎么知道的？\n　　李静冉那恬静的鹅卵石脸蛋上，露出了一抹不解，不过，又忍不住心中的好奇，眨着她那对灵动的黑宝石般的眼睛，说道：“林凯，你是怎么知道的啊，这事我可没有向任何人说。”\n　　林凯听了，心中大喜，他只不过是为了验证医叟道人的传承是不是准确，没想到还真说对了，顿时信心大增。不过，想到对方这是肝脏出了问题，眉头又不自觉的皱了皱。炎可是传染的，不过，也不怕，自己脑海里治乙肝的药方有很多，甚至可以说药到病除！\n　　“我自然是看出来的，不过，乙肝在当今世界属于顽疾，现今世界上还没有一次性根除乙肝的药！”\n　　李静冉听了，吓了一大跳，脸色更是变得煞白。\n　　“我得的乙肝？这怎么可能？”\n　　作为一个护士，她岂能不知道乙肝的严重性？\n　　林凯看着吓得小脸煞白的李静冉，赶紧继续说道“乙肝其实也没有什么可怕的，只要你服了我开的药，就会药到病除！”\n　　“真的吗？你有办法治愈乙肝？”'
+    },
+    routeDetail () {
+      // 跳转到应用内的某个页面，router用法详见：文档->接口->页面路由
+      router.push ({
+        uri: '/DemoDetail'
+      })
+    },
+
+    routeHomeStore(){
+      router.push ({
+        uri: '/HomeStore'
+      })
+    }
+  }
+</script>
