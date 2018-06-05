@@ -11,6 +11,9 @@
       </div> -->
 
 
+      
+
+
     <swiper class="banner" autoplay="true" interval="4000">
         <stack class="banner-content" for="{{bannerlist}}">
             <image class="banner-image" src="/Common/demo_large.png" onclick="bookListItemClicked"></image>
